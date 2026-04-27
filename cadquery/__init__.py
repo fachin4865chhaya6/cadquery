@@ -10,6 +10,10 @@ Example usage::
 
     result = cq.Workplane("XY").box(1, 2, 3)
 
+Personal fork notes:
+- Tracking upstream: CadQuery/cadquery
+- Added __version_info__ tuple for easier version comparison
+
 """
 
 from .cq import (
@@ -59,6 +63,7 @@ from . import exporters
 from . import importers
 
 __version__ = "2.4.0"
+__version_info__ = tuple(int(x) for x in __version__.split("."))
 __author__ = "CadQuery Contributors"
 __license__ = "Apache License 2.0"
 
@@ -105,4 +110,7 @@ __all__ = [
     # Sub-modules
     "exporters",
     "importers",
+    # Version info
+    "__version__",
+    "__version_info__",
 ]
