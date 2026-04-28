@@ -13,6 +13,7 @@ Example usage::
 Personal fork notes:
 - Tracking upstream: CadQuery/cadquery
 - Added __version_info__ tuple for easier version comparison
+- Added __author_email__ for completeness
 
 """
 
@@ -65,6 +66,7 @@ from . import importers
 __version__ = "2.4.0"
 __version_info__ = tuple(int(x) for x in __version__.split("."))
 __author__ = "CadQuery Contributors"
+__author_email__ = "cadquery@googlegroups.com"  # added for completeness
 __license__ = "Apache License 2.0"
 
 __all__ = [
