@@ -14,6 +14,7 @@ Personal fork notes:
 - Tracking upstream: CadQuery/cadquery
 - Added __version_info__ tuple for easier version comparison
 - Added __author_email__ for completeness
+- Added __url__ for quick reference to the upstream project
 
 """
 
@@ -68,6 +69,7 @@ __version_info__ = tuple(int(x) for x in __version__.split("."))
 __author__ = "CadQuery Contributors"
 __author_email__ = "cadquery@googlegroups.com"  # added for completeness
 __license__ = "Apache License 2.0"
+__url__ = "https://github.com/CadQuery/cadquery"  # upstream project URL
 
 __all__ = [
     # Core workplane
