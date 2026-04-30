@@ -15,6 +15,7 @@ Personal fork notes:
 - Added __version_info__ tuple for easier version comparison
 - Added __author_email__ for completeness
 - Added __url__ for quick reference to the upstream project
+- Added __description__ for quick module summary (personal preference)
 
 """
 
@@ -70,6 +71,7 @@ __author__ = "CadQuery Contributors"
 __author_email__ = "cadquery@googlegroups.com"  # added for completeness
 __license__ = "Apache License 2.0"
 __url__ = "https://github.com/CadQuery/cadquery"  # upstream project URL
+__description__ = "A parametric 3D CAD scripting framework built on OCCT"  # handy one-liner
 
 __all__ = [
     # Core workplane
@@ -117,4 +119,5 @@ __all__ = [
     # Version info
     "__version__",
     "__version_info__",
+    "__description__",
 ]
