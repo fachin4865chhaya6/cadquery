@@ -102,6 +102,10 @@ class Vector:
         """Return the Euclidean distance from this vector to another."""
         return (self - other).Length()
 
+    def __repr__(self) -> str:
+        """Human-readable representation, handy when debugging in the REPL."""
+        return f"Vector({self.x:.6g}, {self.y:.6g}, {self.z:.6g})"
+
     def __add__(self, other: "Vector") -> "Vector":
         return self.add(other)
 
@@ -110,15 +114,3 @@ class Vector:
 
     def __mul__(self, scale: Real) -> "Vector":
         return self.multiply(scale)
-
-    def __rmul__(self, scale: Real) -> "Vector":
-        return self.multiply(scale)
-
-    def __neg__(self) -> "Vector":
-        return Vector(self._wrapped.Reversed())
-
-    def __abs__(self) -> float:
-        return self.Length()
-
-    def __repr__(self) -> str:
-        return f"Vector({self.x},
