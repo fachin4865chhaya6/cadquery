@@ -26,6 +26,13 @@ class Vector:
     """A 3D vector with OCC backend.
 
     Wraps gp_Vec and gp_Pnt for convenient arithmetic and geometric operations.
+
+    Examples::
+
+        v1 = Vector(1, 0, 0)
+        v2 = Vector(0, 1, 0)
+        v3 = v1 + v2          # Vector(1, 1, 0)
+        v4 = v1.cross(v2)     # Vector(0, 0, 1)
     """
 
     def __init__(
@@ -91,6 +98,10 @@ class Vector:
     def toDir(self) -> gp_Dir:
         return gp_Dir(self._wrapped)
 
+    def distanceTo(self, other: "Vector") -> float:
+        """Return the Euclidean distance from this vector to another."""
+        return (self - other).Length()
+
     def __add__(self, other: "Vector") -> "Vector":
         return self.add(other)
 
@@ -110,16 +121,4 @@ class Vector:
         return self.Length()
 
     def __repr__(self) -> str:
-        return f"Vector({self.x}, {self.y}, {self.z})"
-
-    def __eq__(self, other: object) -> bool:
-        if isinstance(other, Vector):
-            return self._wrapped.IsEqual(other._wrapped, 1e-9, 1e-9)
-        return NotImplemented
-
-    @classmethod
-    def _from_occ(cls, vec: gp_Vec) -> "Vector":
-        """Create a Vector directly from a gp_Vec without copying."""
-        obj = cls.__new__(cls)
-        obj._wrapped = vec
-        return obj
+        return f"Vector({self.x},
