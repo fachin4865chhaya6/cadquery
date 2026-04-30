@@ -16,6 +16,7 @@ Personal fork notes:
 - Added __author_email__ for completeness
 - Added __url__ for quick reference to the upstream project
 - Added __description__ for quick module summary (personal preference)
+- Added __author__ and __license__ to __all__ for completeness
 
 """
 
@@ -116,8 +117,10 @@ __all__ = [
     # Sub-modules
     "exporters",
     "importers",
-    # Version info
+    # Version and package metadata
     "__version__",
     "__version_info__",
+    "__author__",
+    "__license__",
     "__description__",
 ]
